@@ -4,8 +4,8 @@ on: push
 jobs:
     Echo:
         runs-on: Ubuntu-Latest
-        step: 
+        steps: 
             - name: Show the trigger
-            #verificar o evento que acionou o fluxo de trabalho
+              run: echo "Acionado por um(a) ${{github.event_name}}"
+                          #verificar o evento que acionou o fluxo de trabalho
             #${{github.}#} -> acessa muitos eventos
-                run: echo "Acionado por um(a) ${{github.event_name}}"
