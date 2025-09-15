@@ -1,0 +1,25 @@
+name: 01 - Building Blocks
+on: push
+#on: workflow_dispatch
+
+jobs:
+  echo-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, World!"
+  echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failed step #executará m código que é diferente de zero no bash
+        #dieferente de zero, então o falhou
+        run: |
+          echo "I will fail" 
+          exit 1 
+        #executará um comando diferente de 0
+      - name: Say Goodbye
+        run: echo "Goodbye!"
+
+      #basicamente, nesse fluxo de trabalho, em caso da primeira etapa falhar, as seguintes não rodam
+      #daí caso a primeira funcione, as demais vão sendo executadas uma por uma
+      #a verificação de falha (se é diferente de 1 ou não) é feita primeira e a mensagem de goodbye em seguida
+#git commit -m "fluxo de trabalho adicionado" -> para um commit (especificando o que ocorreu na versão atual)
