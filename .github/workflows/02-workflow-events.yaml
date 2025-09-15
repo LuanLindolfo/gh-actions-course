@@ -1,4 +1,4 @@
-name: 02 - Workflow Events
+name: Teste
 on: push
 
 jobs:
