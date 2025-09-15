@@ -13,9 +13,8 @@ jobs:
       - name: Failed step #executará m código que é diferente de zero no bash
         #dieferente de zero, então o falhou
         run: |
-          echo "I will fail" 
-          exit 1 
-        #executará um comando diferente de 0
+          echo "I will succeed" 
+          exit 0
       - name: Say Goodbye
         run: echo "Goodbye!"
 
