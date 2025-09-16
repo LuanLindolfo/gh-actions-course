@@ -1,6 +1,6 @@
 name: 01 - Building Blocks
-on: push
-#on: workflow_dispatch
+#on: push
+on: workflow_dispatch
 
 jobs:
   echo-hello:
@@ -22,3 +22,5 @@ jobs:
       #daí caso a primeira funcione, as demais vão sendo executadas uma por uma
       #a verificação de falha (se é diferente de 1 ou não) é feita primeira e a mensagem de goodbye em seguida
 #git commit -m "fluxo de trabalho adicionado" -> para um commit (especificando o que ocorreu na versão atual)
+
+#on: workflow_dispatch pra não ser necessário executar novamente o fluxo toda vez que fizer o push para o branch principal
