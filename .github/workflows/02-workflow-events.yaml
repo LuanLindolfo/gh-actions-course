@@ -1,5 +1,9 @@
 name: 02 - Workflow Events
-on: push
+on:
+    push:
+    pull_request:
+    schedule:
+        - cron: '*/5 * * * *'
 
 jobs:
     Echo:
@@ -9,3 +13,5 @@ jobs:
               run: echo "Acionado por um(a) ${{github.event_name}}"
                           #verificar o evento que acionou o fluxo de trabalho
             #${{github.}#} -> acessa muitos eventos
+#adicionando mais entradas à chave para que possa acionar o workflow a partir de diferentes evenetos
+#fazendo isso como um formato de matriz (- 1 - 2) ou como uma lista (1: 2:)
