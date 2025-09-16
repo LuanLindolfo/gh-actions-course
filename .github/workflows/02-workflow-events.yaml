@@ -4,6 +4,7 @@ on:
     pull_request:
     schedule:
         - cron: '*/5 * * * *'
+    workflow_dispatch:
 
 jobs:
     Echo:
@@ -15,3 +16,4 @@ jobs:
             #${{github.}#} -> acessa muitos eventos
 #adicionando mais entradas à chave para que possa acionar o workflow a partir de diferentes evenetos
 #fazendo isso como um formato de matriz (- 1 - 2) ou como uma lista (1: 2:)
+    #boa maneira de como acionar o fluxo de trabalho
