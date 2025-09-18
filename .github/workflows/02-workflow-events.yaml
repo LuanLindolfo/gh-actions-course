@@ -1,7 +1,7 @@
 name: 02 - Workflow Events
 on:
     push:
-    pull_request:
+   # pull_request:
     schedule:
         - cron: '*/5 * * * *'
     workflow_dispatch:
@@ -17,3 +17,4 @@ jobs:
 #adicionando mais entradas à chave para que possa acionar o workflow a partir de diferentes evenetos
 #fazendo isso como um formato de matriz (- 1 - 2) ou como uma lista (1: 2:)
     #boa maneira de como acionar o fluxo de trabalho
+#tirando o pull request pois vai ser ativado em outro arquivo (5) e não quer que ative esse aqui
