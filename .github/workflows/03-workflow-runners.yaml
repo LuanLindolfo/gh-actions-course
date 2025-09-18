@@ -1,6 +1,8 @@
 name: 03 - Workflow Runners
 
-on: push
+#on: push
+
+on: workflow_dispatch
 
 jobs:
     ubuntu-echo:
@@ -26,3 +28,4 @@ jobs:
                     echo "This job is running on an MacOS runner."
                     echo "Runner OS: $RUNNER_OS"
 #| -> #pra escrever um unico script bash - com várias linhas
+#on: workflow_dispatch -> pra não adicionar o fluxo de trabalho sempre que fizer alteração
