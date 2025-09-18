@@ -5,6 +5,9 @@ on: push
 jobs:
     build:
         runs-on: ubuntu-latest
+        defaults: 
+            run:
+              working-directory: 04-using-actions/react-app
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
@@ -14,7 +17,8 @@ jobs:
                 node-version: '20.x'
             - name: Install Depedencies
               run: npm ci
-              working-directory: 04-using-actions/react-app
+            - name: Run Unit Tests
+              run: npm run test
         #0-checar o código do repositório
         #1-Instalar Dependências para a Aplicação
         #2-Testes Automatizados
@@ -24,3 +28,8 @@ jobs:
         #usando o npm ao invés de instalar globalmente e depois chama na linha de comando
         #instala na aplicação react-app e se não tiver, ele cria
         #usa o npm run start no react-app
+        #working-directory: 04-using-actions/react-app -> informa o diretório de trabalho
+        #run:
+        #      working-directory: 04-using-actions/react-app
+        #steps:
+            #adicionado pra que sempre atue nesse diretório e não precise especificar toda vez
