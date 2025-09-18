@@ -1,0 +1,21 @@
+name: 04 - Using Actions
+
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+                - name: Checkout Code
+                  uses: actions/checkout@v4
+                - name: Priting Folders
+                  run: ls
+        #0-checar o código do repositório
+        #1-Instalar Dependências para a Aplicação
+        #2-Testes Automatizados
+
+        #foi para a pasta e instala o node e o npm (já tem instalado na máquina)
+        #usou npx create-react-app react-app --template typescript pra usar o pacote sem instalar globalmente
+        #usando o npm ao invés de instalar globalmente e depois chama na linha de comando
+        #instala na aplicação react-app e se não tiver, ele cria
+        #usa o npm run start no react-app
