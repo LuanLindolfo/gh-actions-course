@@ -7,9 +7,16 @@ on:
             debug:
                 type: boolean
                 default: false
+env:
+    MY_WORKFLOW_VAR:  "Workflow"
+    MY_OVERWRITTEN_VAR:  "Workflow"
+
 jobs:
     echo-data:
         runs-on: ubuntu-latest
+        env:
+            MY_JOB_VAR:  "job"
+            MY_OVERWRITTEN_VAR:  "Workflow"
         steps:
             - name: Display information
               run: |
@@ -23,6 +30,17 @@ jobs:
             - name: Retrieve Variable
               run: |
                 echo "Variable Value: ${{ vars.MY_VAR }}"
+            - name: Print Env Variables
+              env:
+                MY_OVERWRITTEN_VAR:  "step"
+              run: |
+                echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
+                echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
+            - name: Print Env Variables
+              run: |
+                echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
+                echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
+
 
 #run-name: ${{}/} ap[os o name, [e um recurso importante pra achar essas ferramentas]]
 #MY_VAR foi adicionada, com qualquer valor, no github por meio do  secrets and variables>actions>new repository variable>
