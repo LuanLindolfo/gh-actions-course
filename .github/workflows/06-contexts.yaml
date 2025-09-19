@@ -20,3 +20,4 @@ jobs:
                 echo "Variable Value: ${{ vars.MY_VAR }}"
 
 #run-name: ${{}/} ap[os o name, [e um recurso importante pra achar essas ferramentas]]
+#MY_VAR foi adicionada, com qualquer valor, no github por meio do  secrets and variables>actions>new repository variable>
