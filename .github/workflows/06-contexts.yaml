@@ -40,7 +40,13 @@ jobs:
               run: |
                 echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
                 echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
-
+    echo-data2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Env Variables
+              run: |
+                echo "Workflow env: $MY_WORKFLOW_VAR
+                echo "Overwritten env: $MY_OVERWRITTEN_VAR
 
 #run-name: ${{}/} ap[os o name, [e um recurso importante pra achar essas ferramentas]]
 #MY_VAR foi adicionada, com qualquer valor, no github por meio do  secrets and variables>actions>new repository variable>
